@@ -4,7 +4,10 @@ package net.meng.util;
  * Author: Meng LU <lumeng.dev@gmail.com>
  * Date: 9/22/14 8:44 PM
  */
-public class QuicksortRegular {
+
+@SuppressWarnings("unchecked")
+
+public class QuickSortRegular {
 
     private static int partition(Comparable[] a, int lo, int hi) {
 
@@ -29,16 +32,16 @@ public class QuicksortRegular {
 
             if (lt >= rt) break;
 
-            exch(a, lt, rt);
+            exchange(a, lt, rt);
         }
 
-        exch(a, lo, rt);
+        exchange(a, lo, rt);
 
         return rt;
 
     }
 
-    private static void exch (Comparable[] a, int i, int j) {
+    private static void exchange(Comparable[] a, int i, int j) {
         Comparable tmp = a[i];
         a[i] = a[j];
         a[j] = tmp;
@@ -59,7 +62,7 @@ public class QuicksortRegular {
 
         System.out.println("define array:");
         for (int i = 0; i<10; i++) {
-            a[i] = new Integer((int) Math.ceil(100*Math.sin(i)));
+            a[i] = (int) Math.ceil(100*Math.sin(i));
             System.out.println("a[" + i + "] = " + a[i]);
         }
 
